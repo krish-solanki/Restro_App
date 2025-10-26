@@ -18,6 +18,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  
+  assets:
+    - images/
+    - images/google.png
 
   # ------------------ ADDED FONT SECTION ------------------
   # This section registers all the Poppins font files under one family name.
