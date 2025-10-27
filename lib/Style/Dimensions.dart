@@ -7,7 +7,8 @@ class Dimensions {
   static double height5 = 0.05.sh;
   static double height10 = 0.10.sh;
   static double height20 = 0.20.sh;
-  static double height30 = 0.25.sh;
+  static double height25 = 0.25.sh;
+  static double height40 = 0.40.sh;
 
   // Widths
   static double fullWidth = ScreenUtil().screenWidth;

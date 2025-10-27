@@ -13,7 +13,21 @@ class Restaurant {
     required this.rating,
   });
 
-  // Access data like restaurant['name']
+  // Create object from a map
+  factory Restaurant.fromMap(Map<String, dynamic> map) {
+    if (map.isEmpty) {
+      throw ArgumentError('Map cannot be empty');
+    }
+    return Restaurant(
+      name: map['name'] ?? '',
+      imageUrl: map['imageUrl'] ?? '',
+      cuisine: map['cuisine'] ?? '',
+      distance: map['distance'] ?? '',
+      rating: (map['rating'] ?? 0).toDouble(),
+    );
+  }
+
+  // Allow `restaurant['name']` syntax
   dynamic operator [](String key) {
     switch (key) {
       case 'name':
@@ -29,5 +43,16 @@ class Restaurant {
       default:
         throw ArgumentError('Invalid property name: $key');
     }
+  }
+
+  // Optional (if you ever need to convert back)
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'imageUrl': imageUrl,
+      'cuisine': cuisine,
+      'distance': distance,
+      'rating': rating,
+    };
   }
 }

@@ -87,7 +87,7 @@ class FeaturesReastaurents extends StatelessWidget {
                         ),
                         SizedBox(height: 4.h),
                         Text(
-                          "${restaurant['cuisine']} • ${restaurant['distance']}",
+                          "${restaurant['cuisine']} • ${restaurant['distance'] + 'KM'}",
                           style: AppTextstyle.restaurentFeature(2, false),
                           overflow: TextOverflow.ellipsis,
                         ),

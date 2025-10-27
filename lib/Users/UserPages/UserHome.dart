@@ -4,6 +4,7 @@ import 'package:restro_table_booking_app/Model/UserModel/Restaurent.dart';
 import 'package:restro_table_booking_app/Style/Color.dart';
 import 'package:restro_table_booking_app/Style/Dimensions.dart';
 import 'package:restro_table_booking_app/Style/TextStyle.dart';
+import 'package:restro_table_booking_app/Widgets/UserWidgets/AllRestaurent.dart';
 import 'package:restro_table_booking_app/Widgets/UserWidgets/FeaturesReastaurents.dart';
 
 class UserHome extends StatefulWidget {
@@ -26,7 +27,7 @@ class _UserHomeState extends State<UserHome>
     'Top Rated',
   ];
 
-  // Sample static data
+  // ✅ Static sample restaurant list
   final List<Restaurant> featureRestaurants = [
     Restaurant(
       name: "Leonardo's Pizza",
@@ -37,14 +38,14 @@ class _UserHomeState extends State<UserHome>
     ),
     Restaurant(
       name: 'La Pinoz',
-      imageUrl: 'images/Interior/interior1.jpg',
+      imageUrl: 'images/Interior/interior2.jpg',
       cuisine: 'Indian',
       distance: '2.3',
       rating: 4.5,
     ),
     Restaurant(
       name: 'Burger King',
-      imageUrl: 'images/Interior/interior1.jpg',
+      imageUrl: 'images/Interior/interior3.jpg',
       cuisine: 'American',
       distance: '5',
       rating: 3.3,
@@ -68,144 +69,171 @@ class _UserHomeState extends State<UserHome>
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // 🔹 Location Bar
-              Container(
-                height: 45.h,
-                width: Dimensions.fullWidth,
-                decoration: BoxDecoration(
-                  color: AppColors.textPrimaryColor,
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text('Rajkot, ',
-                            style: AppTextstyle.locationTextStyle()),
-                        Text('Gujarat',
-                            style: AppTextstyle.locationTextStyle()),
-                      ],
-                    ),
-                    Icon(
-                      Icons.account_circle_outlined,
-                      color: AppColors.whiteColor,
-                      size: 28.sp,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 5.h),
-              // 🔹 Category Tabs (Your original rounded style)
-              Container(
-                height: 35.h,
-                width: Dimensions.fullWidth,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColors.registerBorderColor,
-                    width: 2,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 🔹 Location Bar (Your Code)
+                Container(
+                  height: 45.h,
+                  width: Dimensions.fullWidth,
+                  decoration: BoxDecoration(
+                    color: AppColors.textPrimaryColor,
+                    borderRadius: BorderRadius.circular(12.r),
                   ),
-                  color: AppColors.whiteColor,
-                  borderRadius: BorderRadius.circular(25.r),
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            isDense: true,
-                            hintText: "Search for restaurants, cuisine...",
-                            hintStyle: AppTextstyle.hintText(),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.zero,
-                          ),
-                        ),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Text('Rajkot, ',
+                              style: AppTextstyle.locationTextStyle()),
+                          Text('Gujarat',
+                              style: AppTextstyle.locationTextStyle()),
+                        ],
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 10.w),
-                      child: Icon(
-                        Icons.search,
-                        color: AppColors.actionPrimaryColor,
-                        size: 22.sp,
+                      Icon(
+                        Icons.account_circle_outlined,
+                        color: AppColors.whiteColor,
+                        size: 28.sp,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 10.h),
-              SizedBox(
-                height: 20.h,
-                child: Expanded(
-                  child: TabBar(
-                    controller: _tabController,
-                    isScrollable: true,
-                    tabAlignment: TabAlignment.start,
-                    indicator: BoxDecoration(),
-                    dividerColor: Colors.transparent,
-                    labelPadding: EdgeInsets.symmetric(horizontal: 5.w),
-                    overlayColor: WidgetStateProperty.all(Colors.transparent),
-                    tabs: List.generate(category.length, (index) {
-                      final bool isSelected = _tabController.index == index;
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _tabController.index = index;
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          decoration: BoxDecoration(
-                            color: isSelected
-                                ? AppColors.actionPrimaryColor
-                                : Colors.transparent,
-                            border: Border.all(
-                              color: AppColors.actionPrimaryColor,
-                              width: 1.5,
-                            ),
-                            borderRadius: BorderRadius.circular(30.r),
-                          ),
-                          child: Center(
-                            child: Text(
-                              category[index],
-                              style: isSelected
-                                  ? AppTextstyle.tabBarTextStyle(true)
-                                  : AppTextstyle.tabBarTextStyle(false),
+                SizedBox(height: 10.h),
+                // 🔹 Category Tabs (Your original rounded style)
+                Container(
+                  height: 35.h,
+                  width: Dimensions.fullWidth,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: AppColors.registerBorderColor,
+                      width: 2,
+                    ),
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.circular(25.r),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              isDense: true,
+                              hintText: "Search for restaurants, cuisine...",
+                              hintStyle: AppTextstyle.hintText(),
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.zero,
                             ),
                           ),
                         ),
-                      );
-                    }),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 10.w),
+                        child: Icon(
+                          Icons.search,
+                          color: AppColors.actionPrimaryColor,
+                          size: 22.sp,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              SizedBox(height: 10.h),
+                SizedBox(height: 10.h),
+                SizedBox(
+                  height: 20.h,
+                  child: Expanded(
+                    child: TabBar(
+                      controller: _tabController,
+                      isScrollable: true,
+                      tabAlignment: TabAlignment.start,
+                      indicator: BoxDecoration(),
+                      dividerColor: Colors.transparent,
+                      labelPadding: EdgeInsets.symmetric(horizontal: 5.w),
+                      overlayColor: WidgetStateProperty.all(Colors.transparent),
+                      tabs: List.generate(category.length, (index) {
+                        final bool isSelected = _tabController.index == index;
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _tabController.index = index;
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            decoration: BoxDecoration(
+                              color: isSelected
+                                  ? AppColors.actionPrimaryColor
+                                  : Colors.transparent,
+                              border: Border.all(
+                                color: AppColors.actionPrimaryColor,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(30.r),
+                            ),
+                            child: Center(
+                              child: Text(
+                                category[index],
+                                style: isSelected
+                                    ? AppTextstyle.tabBarTextStyle(true)
+                                    : AppTextstyle.tabBarTextStyle(false),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.h),
 
-              // 🔹 Featured Restaurants Section
-              Text('Featured Restaurants',
-                  style: AppTextstyle.featureRestaurentTextStyle()),
-              SizedBox(height: 10.h),
+                // 🔹 Featured Restaurants Section
+                Text('Featured Restaurants',
+                    style: AppTextstyle.featureRestaurentTextStyle()),
+                SizedBox(height: 10.h),
 
-              SizedBox(
-                height: Dimensions.height30,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
+                // ✅ Horizontal scroll section
+                SizedBox(
+                  height: 220.h,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: featureRestaurants.length,
+                    itemBuilder: (context, index) {
+                      final restaurant = featureRestaurants[index];
+                      return FeaturesReastaurents(restaurant: restaurant);
+                    },
+                  ),
+                ),
+
+                SizedBox(height: 16.h),
+
+                // 🔹 All Restaurants (Grid)
+                Text('All Restaurants',
+                    style: AppTextstyle.featureRestaurentTextStyle()),
+
+                SizedBox(height: 10.h),
+
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: featureRestaurants.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 12.w,
+                    mainAxisSpacing: 12.h,
+                    childAspectRatio: 0.8, // You can adjust this ratio
+                  ),
                   itemBuilder: (context, index) {
                     final restaurant = featureRestaurants[index];
-                    return FeaturesReastaurents(restaurant: restaurant);
+                    return AllRestaurent(restaurant: restaurant);
                   },
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
