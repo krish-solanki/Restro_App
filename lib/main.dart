@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:restro_table_booking_app/Users/UserLogin/Login.dart';
-
+import 'package:restro_table_booking_app/Users/UserPages/UserHome.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,8 +17,8 @@ class MainApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          home: UserLogin(),
+        return const MaterialApp(
+          home: UserHome(),
         );
       },
     );

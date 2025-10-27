@@ -11,5 +11,7 @@ class AppColors {
   static const registerBorderColor = Color(0xFFE0E0E0);
   static const whiteColor = Colors.white;
   static const blackColor = Colors.black87;
+  static const blackColor12 = Colors.black12;
+  static final greyColor700 = Colors.grey[700];
   static const inputBorderColor = Color(0xFFE0E0E0);
 }

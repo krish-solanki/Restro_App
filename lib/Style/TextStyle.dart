@@ -84,4 +84,62 @@ class AppTextstyle {
         fontSize: 12.sp,
         color: AppColors.textPrimaryColor);
   }
+
+  static TextStyle locationTextStyle() {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
+      fontSize: 14.sp,
+      color: AppColors.whiteColor,
+    );
+  }
+
+  static TextStyle tabBarTextStyle(bool isColor) {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w500,
+        fontSize: 10.sp,
+        color: isColor ? AppColors.whiteColor : AppColors.blackColor);
+  }
+
+  static TextStyle featureRestaurentTextStyle() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 20.sp,
+        color: AppColors.blackColor);
+  }
+
+  static TextStyle restaurentRating() {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      color: AppColors.whiteColor,
+      fontWeight: FontWeight.w700,
+      fontSize: 12.sp,
+    );
+  }
+
+  static TextStyle restaurentName() {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      color: AppColors.blackColor,
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w700,
+    );
+  }
+
+  static TextStyle restaurentFeature(int num, bool isBold) {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      color: num == 0
+          ? AppColors.whiteColor
+          : num == 1
+              ? AppColors.blackColor
+              : num == 2
+                  ? AppColors.greyColor700
+                  : AppColors.whiteColor,
+      fontSize: 12.sp,
+      fontWeight: isBold ? FontWeight.w700 : FontWeight.w600,
+    );
+  }
 }

@@ -3,13 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Dimensions {
   // Heights
   static double fullHeight = ScreenUtil().screenHeight;
-  static double height1 = 1.h;
-  static double height5 = 5.h;
-  static double height10 = 10.h;
+  static double height1 = 0.01.sh;
+  static double height5 = 0.05.sh;
+  static double height10 = 0.10.sh;
+  static double height20 = 0.20.sh;
+  static double height30 = 0.25.sh;
 
   // Widths
   static double fullWidth = ScreenUtil().screenWidth;
-  static double width1 = 1.w;
-  static double width5 = 5.w;
-  static double width10 = 10.w;
+  static double width1 = 0.01.sw;
+  static double width5 = 0.05.sw;
+  static double width10 = 0.10.sw;
 }

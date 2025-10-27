@@ -22,6 +22,7 @@ flutter:
   assets:
     - images/
     - images/google.png
+    - images/Interior/
 
   # ------------------ ADDED FONT SECTION ------------------
   # This section registers all the Poppins font files under one family name.
