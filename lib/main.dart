@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:restro_table_booking_app/Users/UserLogin/Login.dart';
+import 'package:restro_table_booking_app/Users/UserPages/UserBottomNav.dart';
 import 'package:restro_table_booking_app/Users/UserPages/UserHome.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return const MaterialApp(
-          home: UserHome(),
+          home: UserBottomNav(),
         );
       },
     );

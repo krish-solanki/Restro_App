@@ -8,6 +8,7 @@ class Dimensions {
   static double height10 = 0.10.sh;
   static double height20 = 0.20.sh;
   static double height25 = 0.25.sh;
+  static double height33 = 0.33.sh;
   static double height40 = 0.40.sh;
 
   // Widths

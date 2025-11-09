@@ -2,7 +2,7 @@ class Restaurant {
   final String name;
   final String imageUrl;
   final String cuisine;
-  final String distance;
+  final double distance;
   final double rating;
 
   Restaurant({

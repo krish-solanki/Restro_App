@@ -33,21 +33,21 @@ class _UserHomeState extends State<UserHome>
       name: "Leonardo's Pizza",
       imageUrl: 'images/Interior/interior1.jpg',
       cuisine: 'Italian',
-      distance: '1.2',
+      distance: 1.2,
       rating: 4.5,
     ),
     Restaurant(
       name: 'La Pinoz',
       imageUrl: 'images/Interior/interior2.jpg',
       cuisine: 'Indian',
-      distance: '2.3',
+      distance: 2.3,
       rating: 4.5,
     ),
     Restaurant(
       name: 'Burger King',
       imageUrl: 'images/Interior/interior3.jpg',
       cuisine: 'American',
-      distance: '5',
+      distance: 5,
       rating: 3.3,
     ),
   ];
@@ -146,47 +146,46 @@ class _UserHomeState extends State<UserHome>
                 SizedBox(height: 10.h),
                 SizedBox(
                   height: 20.h,
-                  child: Expanded(
-                    child: TabBar(
-                      controller: _tabController,
-                      isScrollable: true,
-                      tabAlignment: TabAlignment.start,
-                      indicator: BoxDecoration(),
-                      dividerColor: Colors.transparent,
-                      labelPadding: EdgeInsets.symmetric(horizontal: 5.w),
-                      overlayColor: WidgetStateProperty.all(Colors.transparent),
-                      tabs: List.generate(category.length, (index) {
-                        final bool isSelected = _tabController.index == index;
-                        return GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _tabController.index = index;
-                            });
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            decoration: BoxDecoration(
-                              color: isSelected
-                                  ? AppColors.actionPrimaryColor
-                                  : Colors.transparent,
-                              border: Border.all(
-                                color: AppColors.actionPrimaryColor,
-                                width: 1.5,
-                              ),
-                              borderRadius: BorderRadius.circular(30.r),
+                  child: TabBar(
+                    controller: _tabController,
+                    isScrollable: true,
+                    tabAlignment: TabAlignment.start,
+                    indicator: BoxDecoration(),
+                    dividerColor: AppColors.transparentColor,
+                    labelPadding: EdgeInsets.symmetric(horizontal: 5.w),
+                    overlayColor:
+                        WidgetStateProperty.all(AppColors.transparentColor),
+                    tabs: List.generate(category.length, (index) {
+                      final bool isSelected = _tabController.index == index;
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _tabController.index = index;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 16.w),
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? AppColors.actionPrimaryColor
+                                : Colors.transparent,
+                            border: Border.all(
+                              color: AppColors.actionPrimaryColor,
+                              width: 1.5,
                             ),
-                            child: Center(
-                              child: Text(
-                                category[index],
-                                style: isSelected
-                                    ? AppTextstyle.tabBarTextStyle(true)
-                                    : AppTextstyle.tabBarTextStyle(false),
-                              ),
+                            borderRadius: BorderRadius.circular(30.r),
+                          ),
+                          child: Center(
+                            child: Text(
+                              category[index],
+                              style: isSelected
+                                  ? AppTextstyle.tabBarTextStyle(true)
+                                  : AppTextstyle.tabBarTextStyle(false),
                             ),
                           ),
-                        );
-                      }),
-                    ),
+                        ),
+                      );
+                    }),
                   ),
                 ),
                 SizedBox(height: 16.h),

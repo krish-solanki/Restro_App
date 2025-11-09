@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_screenutil: ^5.9.3 # Example: Using a specific version is better
+  flutter_screenutil:
+  flutter_rating_bar:
 
 dev_dependencies:
   flutter_test:

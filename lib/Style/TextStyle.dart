@@ -142,4 +142,157 @@ class AppTextstyle {
       fontWeight: isBold ? FontWeight.w700 : FontWeight.w600,
     );
   }
+
+  static TextStyle menuFontStyle(bool isSelected) {
+    return TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: isSelected ? 13.sp : 12.sp,
+    );
+  }
+
+  static TextStyle seeRestoName() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        color: AppColors.whiteColor,
+        fontSize: 28.sp,
+        fontWeight: FontWeight.w700);
+  }
+
+  static TextStyle seeRestoSubTitle(bool isBold) {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        color: AppColors.whiteColor,
+        fontSize: 14.sp,
+        fontWeight: isBold ? FontWeight.w500 : FontWeight.w400);
+  }
+
+  static TextStyle seeRestoTabLables() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        color: AppColors.grayMedium,
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w500);
+  }
+
+  static TextStyle seeRestoSlotText() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        color: AppColors.grayMedium,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500);
+  }
+
+  static TextStyle seeTabBarTextStyle() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 12.sp,
+        color: AppColors.whiteColor);
+  }
+
+  static TextStyle reviewerName() {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w600,
+      color: AppColors.textPrimaryColor,
+    );
+  }
+
+  static TextStyle reviewerDate() {
+    return TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColors.textSecondaryColor,
+    );
+  }
+
+  static TextStyle myBooking() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 20.sp,
+        color: AppColors.whiteColor);
+  }
+
+  static TextStyle bookinName() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w700,
+        fontSize: 16.sp,
+        color: AppColors.textPrimaryColor);
+  }
+
+  static TextStyle bookingDetail() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400,
+        fontSize: 10.sp,
+        color: AppColors.textSecondaryColor);
+  }
+
+  static TextStyle bookingButton() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w500,
+        fontSize: 12.sp,
+        color: AppColors.whiteColor);
+  }
+
+  static TextStyle myProfile() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 20.sp,
+        color: AppColors.whiteColor);
+  }
+
+  static TextStyle myProfileName() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 22.sp,
+        color: AppColors.blackColor);
+  }
+
+  static TextStyle myProfileSection() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 18.sp,
+        color: AppColors.blackColor);
+  }
+
+  static TextStyle myProfileUserDetails() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400,
+        fontSize: 12.sp,
+        color: AppColors.grayMedium);
+  }
+
+  static TextStyle myProfileLable() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400,
+        fontSize: 14.sp,
+        color: AppColors.blackColor);
+  }
+
+  static TextStyle myProfileChangePassBtn() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w500,
+        fontSize: 10.sp,
+        color: AppColors.actionPrimaryColor);
+  }
+
+    static TextStyle myProfileLogoutBtn() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w700,
+        fontSize: 14.sp,
+        color: AppColors.whiteColor);
+  }
 }
