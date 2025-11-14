@@ -288,11 +288,35 @@ class AppTextstyle {
         color: AppColors.actionPrimaryColor);
   }
 
-    static TextStyle myProfileLogoutBtn() {
+  static TextStyle myProfileLogoutBtn() {
     return TextStyle(
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w700,
         fontSize: 14.sp,
         color: AppColors.whiteColor);
+  }
+
+  static TextStyle menuTitle() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 16.sp,
+        color: AppColors.blackColor);
+  }
+
+  static TextStyle menuDescription() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w400,
+        fontSize: 10.sp,
+        color: AppColors.greyColor700);
+  }
+
+  static TextStyle menuPrice() {
+    return TextStyle(
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w600,
+        fontSize: 16.sp,
+        color: AppColors.actionPrimaryColor);
   }
 }

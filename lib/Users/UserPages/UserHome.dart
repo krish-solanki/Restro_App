@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:restro_table_booking_app/Model/UserModel/Restaurent.dart';
 import 'package:restro_table_booking_app/Style/Color.dart';
-import 'package:restro_table_booking_app/Style/Dimensions.dart';
 import 'package:restro_table_booking_app/Style/TextStyle.dart';
 import 'package:restro_table_booking_app/Widgets/UserWidgets/AllRestaurent.dart';
 import 'package:restro_table_booking_app/Widgets/UserWidgets/FeaturesReastaurents.dart';
@@ -78,7 +77,7 @@ class _UserHomeState extends State<UserHome>
                 // 🔹 Location Bar (Your Code)
                 Container(
                   height: 45.h,
-                  width: Dimensions.fullWidth,
+                  width: ScreenUtil().screenWidth,
                   decoration: BoxDecoration(
                     color: AppColors.textPrimaryColor,
                     borderRadius: BorderRadius.circular(12.r),
@@ -107,7 +106,7 @@ class _UserHomeState extends State<UserHome>
                 // 🔹 Category Tabs (Your original rounded style)
                 Container(
                   height: 35.h,
-                  width: Dimensions.fullWidth,
+                  width: ScreenUtil().screenWidth,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: AppColors.registerBorderColor,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:restro_table_booking_app/Style/Color.dart';
 import 'package:restro_table_booking_app/Style/Dimensions.dart';
@@ -54,6 +55,7 @@ class _SeeRestaurentDetailState extends State<SeeRestaurentDetail>
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             iconTheme: IconThemeData(color: AppColors.whiteColor),
             expandedHeight: 300.h,
             pinned: true,
@@ -88,12 +90,30 @@ class _SeeRestaurentDetailState extends State<SeeRestaurentDetail>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    children: [
+                      RatingBarIndicator(
+                        rating: widget.rating,
+                        itemBuilder: (context, index) => const Icon(
+                          Icons.star,
+                          color: AppColors.actionPrimaryColor,
+                        ),
+                        itemSize: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: Text('${widget.rating}',
+                            style: AppTextstyle.seeRestoSubTitle(false)
+                                .copyWith(fontSize: 12.sp)),
+                      )
+                    ],
+                  ),
                   // Header Row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '${widget.cuisine} • ${widget.distance}',
+                        '${widget.cuisine} • ${widget.distance} KM',
                         style: AppTextstyle.seeRestoSubTitle(false),
                       ),
                       const Icon(Icons.favorite_border, color: Colors.white),
@@ -139,15 +159,11 @@ class _SeeRestaurentDetailState extends State<SeeRestaurentDetail>
                   SizedBox(
                     height: 500.h, // set height manually or dynamically
                     child: TabBarView(
+                      physics: const NeverScrollableScrollPhysics(),
                       controller: _tabController,
-                      children:const [
-                        // Book Tab
+                      children: const [
                         SeeAllSeat(),
-
-                        // Menu Tab
                         SeeMenu(),
-
-                        // Review Tab
                         SeeReview(),
                       ],
                     ),

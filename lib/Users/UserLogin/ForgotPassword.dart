@@ -13,8 +13,8 @@ class UserForgotpassword extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: Dimensions.fullHeight,
-          width: Dimensions.fullWidth,
+          height: ScreenUtil().screenHeight,
+          width: ScreenUtil().screenWidth,
           color: AppColors.backgroundColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +41,7 @@ class UserForgotpassword extends StatelessWidget {
               ),
               SizedBox(height: 5.sp),
               Container(
-                width: Dimensions.fullWidth - 40,
+                width: ScreenUtil().screenWidth - 40,
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -63,7 +63,7 @@ class UserForgotpassword extends StatelessWidget {
                   ),
                 ),
                 height: 56.sp,
-                width: Dimensions.fullWidth - 32,
+                width: ScreenUtil().screenWidth - 32,
                 padding: const EdgeInsets.only(left: 16),
                 child: Center(
                   child: TextFormField(

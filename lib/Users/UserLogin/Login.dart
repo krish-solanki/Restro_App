@@ -20,7 +20,7 @@ class _UserLoginState extends State<UserLogin> {
       body: SingleChildScrollView(
         child: Container(
             color: AppColors.backgroundColor,
-            height: Dimensions.fullHeight,
+            height: ScreenUtil().screenHeight,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -104,7 +104,7 @@ class _UserLoginState extends State<UserLogin> {
                   SizedBox(height: 40),
                   Container(
                     height: 56.sp,
-                    width: Dimensions.fullWidth - 20,
+                    width: ScreenUtil().screenWidth - 20,
                     decoration: BoxDecoration(
                       color: AppColors.actionPrimaryColor,
                       borderRadius: BorderRadius.circular(10),
@@ -118,7 +118,7 @@ class _UserLoginState extends State<UserLogin> {
                   ),
                   SizedBox(height: 10),
                   Container(
-                    width: Dimensions.fullWidth - 50,
+                    width: ScreenUtil().screenWidth - 50,
                     child: const Row(
                       children: [
                         // The left line
@@ -157,7 +157,7 @@ class _UserLoginState extends State<UserLogin> {
                   Center(
                     child: Container(
                       height: 56.sp,
-                      width: Dimensions.fullWidth - 20,
+                      width: ScreenUtil().screenWidth - 20,
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: AppColors.whiteColor,

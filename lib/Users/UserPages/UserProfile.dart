@@ -15,22 +15,17 @@ class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.textPrimaryColor,
+        title: SafeArea(
+            child: Text('My Profile', style: AppTextstyle.myProfile())),
+      ),
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              Container(
-                color: AppColors.textPrimaryColor,
-                width: Dimensions.fullWidth,
-                padding: EdgeInsets.symmetric(vertical: 15.sp),
-                child: Center(
-                  child: Text(
-                    'My Profile',
-                    style: AppTextstyle.myProfile(),
-                  ),
-                ),
-              ),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(

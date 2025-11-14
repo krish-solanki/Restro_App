@@ -13,7 +13,7 @@ class UserRegister extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            height: Dimensions.fullHeight,
+            height: ScreenUtil().screenHeight,
             color: AppColors.backgroundColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +197,7 @@ class UserRegister extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: AppColors.actionPrimaryColor,
                   ),
-                  width: Dimensions.fullWidth - 32,
+                width: ScreenUtil().screenWidth - 32,
                   height: 56.sp,
                   child: Center(
                     child: Text(

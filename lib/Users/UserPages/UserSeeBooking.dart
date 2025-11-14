@@ -35,24 +35,16 @@ class _UserSeeBookingState extends State<UserSeeBooking>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.textPrimaryColor,
+        title: Text('My Booking', style: AppTextstyle.myProfile()),
+      ),
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
-            Container(
-              width: double.infinity,
-              color: AppColors.textPrimaryColor,
-              padding: EdgeInsets.symmetric(vertical: 15.h),
-              child: Center(
-                child: Text(
-                  'My Bookings',
-                  style: AppTextstyle.myBooking(),
-                ),
-              ),
-            ),
-
             SizedBox(height: 15.h),
 
             // TabBar
@@ -60,7 +52,7 @@ class _UserSeeBookingState extends State<UserSeeBooking>
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Container(
                 height: 40.h,
-                width: double.infinity,
+                width: ScreenUtil().screenWidth,
                 child: TabBar(
                   controller: _tabBarController,
                   isScrollable: false,

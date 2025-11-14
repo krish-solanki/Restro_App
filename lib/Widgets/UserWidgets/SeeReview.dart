@@ -58,7 +58,7 @@ class _SeeReviewState extends State<SeeReview> {
                         padding: EdgeInsets.only(left: 25.sp),
                         child: RatingBarIndicator(
                           rating: 4.5,
-                          itemBuilder: (context, index) => Icon(
+                          itemBuilder: (context, index) => const Icon(
                             Icons.star,
                             color: AppColors.actionPrimaryColor,
                           ),
